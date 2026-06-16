@@ -170,31 +170,60 @@ Sistem ini digunakan sebagai alat bantu diagnosa awal, bukan pengganti pemeriksa
 ## UI
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/66974abb-91d1-4687-bc8a-e356077d1ba7" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/0bfe955b-95b0-4df9-b4c2-7683b0238dce" />
+
+---
 
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/be5969dd-649a-47e8-a9e6-d4ec5acba61f" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/46fb64c7-ef57-41b9-b733-58d0fd3339c8" />
+
+---
 
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/da638fd7-92a9-408f-a9ca-7e41658ad822" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/40111d5c-129e-4081-ab2a-490507206551" />
+
+---
 
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/18a0b091-da5e-492a-ba15-b6f9fc50b6d2" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/993307ab-db47-4009-8114-1668e1b4bdde" />
 
+---
 
 <img width="1358" height="613" alt="image" src="https://github.com/user-attachments/assets/710b5d09-bfa6-4d93-be6c-d573a4355d97" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/8b40d701-d6fd-4929-94fd-55196f788b80" />
+
+---
 
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/80531a90-d651-4954-9908-6beee7f76191" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/c1ceb533-a8e1-4431-b68b-ba6c217fb282" />
+
+---
 
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/9e57397e-7b80-4b62-ae02-b9dd3f3f7cbc" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/e4048593-6f56-4eb9-b76f-2fdf561672f8" />
 
+---
+
 <img width="1352" height="611" alt="image" src="https://github.com/user-attachments/assets/31d8d2a9-8118-4784-a58c-dd2cab3a0537" />
+
+---
