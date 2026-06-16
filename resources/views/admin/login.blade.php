@@ -10,7 +10,16 @@
 <div class="login-page">
     <form class="login-card" method="POST" action="{{ route('admin.login.process') }}">
         @csrf
-        <div class="brand" style="margin-bottom:22px"><span class="brand-mark">SP</span><span>Admin Sistem Pakar</span></div>
+        <div class="brand" style="margin-bottom:22px">
+            <span class="brand-mark">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="12" rx="2" />
+                    <path d="M2 20h20" />
+                    <path d="M9 10l2 2 4-4" />
+                </svg>
+            </span>
+            <span>Admin Sistem Pakar</span>
+        </div>
         <h1 style="margin:0 0 8px">Login Pakar</h1>
         <p style="color:var(--muted);margin-top:0">Kelola gejala, kerusakan, rule, nilai CF, dan riwayat konsultasi.</p>
         @if(session('error')) <div class="alert alert-error">{{ session('error') }}</div> @endif

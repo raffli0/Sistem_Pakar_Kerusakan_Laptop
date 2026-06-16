@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'uas/sistem-pakar-laptop',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'dfe79d3a2b9f27c3e78a8495999e5a4de6bfea92',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -987,9 +987,9 @@
             'dev_requirement' => false,
         ),
         'uas/sistem-pakar-laptop' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'dfe79d3a2b9f27c3e78a8495999e5a4de6bfea92',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

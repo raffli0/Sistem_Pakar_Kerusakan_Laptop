@@ -22,11 +22,11 @@
             <div class="card">
                 <span class="badge badge-blue">{{ $konsultasi->hasilUtama->kategori }}</span>
                 <h2 style="margin:12px 0 8px">{{ $konsultasi->hasilUtama->nama_kerusakan }}</h2>
-                <p>{{ $konsultasi->hasilUtama->deskripsi }}</p>
+                <p style="white-space: pre-line;">{{ $konsultasi->hasilUtama->deskripsi }}</p>
                 <h3>Kemungkinan Penyebab</h3>
-                <p>{{ $konsultasi->hasilUtama->penyebab }}</p>
+                <p style="white-space: pre-line;">{{ $konsultasi->hasilUtama->penyebab }}</p>
                 <h3>Solusi Awal</h3>
-                <p>{{ $konsultasi->hasilUtama->solusi }}</p>
+                <p style="white-space: pre-line; font-weight: 500;">{{ $konsultasi->hasilUtama->solusi }}</p>
             </div>
         </div>
 
@@ -50,15 +50,20 @@
                 <table class="table">
                     <thead><tr><th>Kerusakan</th><th>Kategori</th><th>CF</th><th>Progress</th><th>Gejala Cocok</th></tr></thead>
                     <tbody>
-                    @foreach($konsultasi->hasilDiagnosa as $hasil)
-                        <tr>
-                            <td><strong>{{ $hasil->kerusakan->nama_kerusakan }}</strong></td>
+                    @foreach($konsultasi->hasilDiagnosa as $index => $hasil)
+                        <tr style="{{ $index === 0 ? 'background-color: #eff6ff;' : '' }}">
+                            <td>
+                                <strong>{{ $hasil->kerusakan->nama_kerusakan }}</strong>
+                                @if($index === 0)
+                                    <span class="badge badge-blue" style="margin-left: 6px; font-size: 10px; padding: 2px 6px; vertical-align: middle;">Utama</span>
+                                @endif
+                            </td>
                             <td><span class="badge">{{ $hasil->kerusakan->kategori }}</span></td>
                             <td><strong>{{ number_format($hasil->nilai_cf, 2) }}%</strong></td>
                             <td><div class="progress"><span style="width: {{ min($hasil->nilai_cf, 100) }}%"></span></div></td>
                             <td>
                                 @foreach(($hasil->gejala_cocok_json ?? []) as $g)
-                                    <div><span class="code">{{ $g['kode'] }}</span> {{ $g['nama'] }}</div>
+                                    <div style="margin-bottom: 4px;"><span class="code">{{ $g['kode'] }}</span> {{ $g['nama'] }}</div>
                                 @endforeach
                             </td>
                         </tr>
