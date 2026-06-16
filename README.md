@@ -200,7 +200,7 @@ Sistem ini digunakan sebagai alat bantu diagnosa awal, bukan pengganti pemeriksa
 
 ---
 
-<img width="1358" height="613" alt="image" src="https://github.com/user-attachments/assets/710b5d09-bfa6-4d93-be6c-d573a4355d97" />
+<!-- <img width="1358" height="613" alt="image" src="https://github.com/user-attachments/assets/710b5d09-bfa6-4d93-be6c-d573a4355d97" /> -->
 
 ---
 
