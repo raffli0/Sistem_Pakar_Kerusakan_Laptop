@@ -1,0 +1,92 @@
+# ============================================================
+# Laravel — Sistem Pakar Kerusakan Laptop
+# ============================================================
+
+# ---------- Laravel Core ----------
+/vendor/
+/node_modules/
+/public/hot
+/public/storage
+/storage/*.key
+/storage/app/public/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+/.env
+/.env.*
+!/.env.example
+/bootstrap/cache/*.php
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+
+# ---------- Testing ----------
+/.phpunit.result.cache
+/coverage/
+
+# ---------- Build & Compiled Assets ----------
+/public/build/
+/public/mix-manifest.json
+
+# ---------- AI Assistant / Agentic Files ----------
+CLAUDE.md
+GEMINI.md
+.gemini/
+.claude/
+.cursor/
+.antigravity/
+*.ai-notes.md
+*.ai-context.md
+*_copilot.md
+
+# ---------- IDE & Editors ----------
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.code-workspace
+
+# ---------- OS Junk ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ---------- Secrets & Keys ----------
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.crt
+secrets.json
+secrets.yaml
+secrets.yml
+
+# ---------- Logs & Temp ----------
+*.log
+*.tmp
+*.bak
+*.swp
+*.cache
+
+# ---------- Database Dumps ----------
+*.sql
+*.sqlite
+*.db
