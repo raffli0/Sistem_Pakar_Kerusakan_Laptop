@@ -22,6 +22,9 @@ Project UAS berbasis **Laravel + MySQL** dengan metode **Forward Chaining** dan 
 - Database menggunakan **MySQL migration**, bukan seeder
 - Data awal gejala, kerusakan, rule, dan akun admin otomatis masuk lewat migration
 
+## Demo Video
+https://youtu.be/Snx8YE2ZjE0?si=2BcO0GPq7IX_Gz7R
+
 ## Akun Admin Default
 
 ```text
