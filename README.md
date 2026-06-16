@@ -170,4 +170,6 @@ Sistem ini digunakan sebagai alat bantu diagnosa awal, bukan pengganti pemeriksa
 ## UI
 <img width="1358" height="613" alt="image" src="https://github.com/user-attachments/assets/b9db7477-0751-4361-b606-ceca88303545" />
 <img width="1358" height="613" alt="image" src="https://github.com/user-attachments/assets/710b5d09-bfa6-4d93-be6c-d573a4355d97" />
+<img width="1358" height="613" alt="image" src="https://github.com/user-attachments/assets/57b62eef-0ebd-4304-bf61-ef9a196f6d62" />
+
 
