@@ -14,8 +14,8 @@ class ConsultationController extends Controller
 {
     public function create()
     {
-        $gejalas = Gejala::orderBy('kategori')->orderBy('kode_gejala')->get()->groupBy('kategori');
-        return view('consultation.create', compact('gejalas'));
+        $gejala = Gejala::orderBy('kategori')->orderBy('kode_gejala')->get()->groupBy('kategori');
+        return view('consultation.create', compact('gejala'));
     }
 
     public function process(Request $request)
@@ -52,7 +52,7 @@ class ConsultationController extends Controller
         foreach ($rules as $rule) {
             // [CERTAINTY FACTOR - TAHAP 1]
             // Menghitung CF Gejala Tunggal: CF User * CF Pakar
-            // Rumus: CF(H,E) = CF(E) * CF(Rule)
+            // Rumus: CF(Hipotesis,Evidence) = CF(Evidence) * CF(Rule)
             $cfUser = (float) $selected[$rule->gejala_id];
             $cfPakar = (float) $rule->cf_pakar;
             $cfGejala = $cfUser * $cfPakar;
@@ -60,7 +60,7 @@ class ConsultationController extends Controller
 
             // [CERTAINTY FACTOR - TAHAP 2]
             // Menggabungkan nilai CF jika suatu penyakit memiliki lebih dari satu gejala cocok (CF Combine)
-            // Rumus: CF_combine = CF_old + CF_new * (1 - CF_old)
+            // Rumus: CF_gabungan = CF_lama + CF_baru * (1 - CF_lama)
             if (!isset($hasil[$kerusakanId])) {
                 // Jika gejala pertama untuk penyakit/kerusakan ini ditemukan
                 $hasil[$kerusakanId] = [
@@ -91,12 +91,12 @@ class ConsultationController extends Controller
         }
 
         // [FORWARD CHAINING - TAHAP 2]
-        // Mengurutkan penyakit/kerusakan dari nilai CF terbesar ke terkecil
-        // Kesimpulan utama adalah penyakit dengan nilai CF tertinggi (paling atas)
+        // Mengurutkan kerusakan dari nilai CF terbesar ke terkecil
+        // Kesimpulan utama adalah kerusakan dengan nilai CF tertinggi (paling atas)
         $sorted = collect($hasil)->sortByDesc('cf')->values();
         $utama = $sorted->first();
 
-        // 3. Menyimpan hasil diagnosis ke database menggunakan database transaction
+        // 3. Menyimpan hasil diagnosis ke database dengan database transaction
         $konsultasi = DB::transaction(function () use ($validated, $selected, $sorted, $utama) {
             $konsultasi = Konsultasi::create([
                 'nama_pengguna' => $validated['nama_pengguna'],

@@ -22,7 +22,18 @@ return new class extends Migration {
             ]
         );
 
-        $gejalas = [
+        // Jenis kerusakan
+        // 1. Power
+        // 2. Display
+        // 3. Cooling
+        // 4. Storage
+        // 5. Input Device
+        // 6. Network
+        // 7. Audio
+        // 8. Hardware
+        // 9. Software
+
+        $gejala = [
             ['G01', 'Laptop tidak menyala sama sekali', 'Power'],
             ['G02', 'Lampu indikator charger tidak menyala', 'Power'],
             ['G03', 'Laptop tidak merespon saat tombol power ditekan', 'Power'],
@@ -55,7 +66,7 @@ return new class extends Migration {
             ['G30', 'Laptop terasa berat saat membuka banyak aplikasi', 'Software'],
         ];
 
-        foreach ($gejalas as [$kode, $nama, $kategori]) {
+        foreach ($gejala as [$kode, $nama, $kategori]) {
             DB::table('gejalas')->updateOrInsert(
                 ['kode_gejala' => $kode],
                 [
@@ -67,7 +78,7 @@ return new class extends Migration {
             );
         }
 
-        $kerusakans = [
+        $kerusakan = [
             ['K01', 'Kerusakan charger/adaptor', 'Power', 'Adaptor atau jalur pengisian daya tidak mampu menyuplai daya dengan baik.', 'Kabel charger putus, adaptor rusak, port charger longgar, atau tegangan tidak stabil.', 'Periksa kabel charger, adaptor, dan port charger. Coba gunakan charger lain yang sesuai.'],
             ['K02', 'Kerusakan baterai', 'Power', 'Baterai tidak dapat menyimpan atau menerima daya secara normal.', 'Umur baterai sudah menurun, cell baterai drop, atau sistem pengisian bermasalah.', 'Cek kesehatan baterai, lakukan kalibrasi baterai, atau ganti baterai jika sudah drop.'],
             ['K03', 'Kerusakan RAM', 'Memory', 'RAM bermasalah sehingga sistem tidak stabil saat berjalan.', 'RAM kotor, slot RAM bermasalah, atau modul RAM rusak.', 'Lepas dan pasang ulang RAM, bersihkan pin RAM, atau coba gunakan slot RAM lain.'],
@@ -85,7 +96,7 @@ return new class extends Migration {
             ['K15', 'Kerusakan motherboard', 'Hardware', 'Kerusakan pada papan utama laptop yang menghubungkan seluruh komponen.', 'IC power rusak, jalur short, komponen terbakar, atau kerusakan kelistrikan internal.', 'Lakukan pemeriksaan teknisi karena kerusakan motherboard membutuhkan pengecekan komponen secara langsung.'],
         ];
 
-        foreach ($kerusakans as [$kode, $nama, $kategori, $deskripsi, $penyebab, $solusi]) {
+        foreach ($kerusakan as [$kode, $nama, $kategori, $deskripsi, $penyebab, $solusi]) {
             DB::table('kerusakans')->updateOrInsert(
                 ['kode_kerusakan' => $kode],
                 [
@@ -121,12 +132,12 @@ return new class extends Migration {
             ['K15', ['G01', 'G03', 'G07', 'G13'], 0.90],
         ];
 
-        foreach ($rules as [$kodeKerusakan, $kodeGejalas, $cf]) {
-            foreach ($kodeGejalas as $kodeGejala) {
+        foreach ($rules as [$kodeKerusakan, $kodeGejala, $cf]) {
+            foreach ($kodeGejala as $g) {
                 DB::table('rules')->updateOrInsert(
                     [
                         'kerusakan_id' => $kerusakanIds[$kodeKerusakan],
-                        'gejala_id' => $gejalaIds[$kodeGejala],
+                        'gejala_id' => $gejalaIds[$g],
                     ],
                     [
                         'cf_pakar' => $cf,

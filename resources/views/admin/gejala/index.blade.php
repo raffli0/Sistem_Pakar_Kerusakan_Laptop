@@ -10,9 +10,9 @@
     <button class="btn btn-light">Cari</button>
 </form>
 <div class="table-wrap"><table class="table"><thead><tr><th>Kode</th><th>Nama Gejala</th><th>Kategori</th><th>Aksi</th></tr></thead><tbody>
-@foreach($gejalas as $gejala)
-<tr><td><span class="code">{{ $gejala->kode_gejala }}</span></td><td>{{ $gejala->nama_gejala }}</td><td><span class="badge">{{ $gejala->kategori }}</span></td><td class="action-row"><a class="btn btn-warning" href="{{ route('admin.gejala.edit', $gejala) }}">Edit</a><form method="POST" action="{{ route('admin.gejala.destroy', $gejala) }}" data-confirm="Hapus gejala ini?">@csrf @method('DELETE')<button class="btn btn-danger">Hapus</button></form></td></tr>
+@foreach($gejala as $item)
+<tr><td><span class="code">{{ $item->kode_gejala }}</span></td><td>{{ $item->nama_gejala }}</td><td><span class="badge">{{ $item->kategori }}</span></td><td class="action-row"><a class="btn btn-warning" href="{{ route('admin.gejala.edit', $item) }}">Edit</a><form method="POST" action="{{ route('admin.gejala.destroy', $item) }}" data-confirm="Hapus gejala ini?">@csrf @method('DELETE')<button class="btn btn-danger">Hapus</button></form></td></tr>
 @endforeach
 </tbody></table></div>
-{{ $gejalas->links() }}
+{{ $gejala->links() }}
 @endsection

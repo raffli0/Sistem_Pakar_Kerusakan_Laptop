@@ -10,7 +10,7 @@ class KerusakanController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('q');
-        $kerusakans = Kerusakan::query()
+        $kerusakan = Kerusakan::query()
             ->when($keyword, fn ($q) => $q->where('kode_kerusakan', 'like', "%{$keyword}%")
                 ->orWhere('nama_kerusakan', 'like', "%{$keyword}%")
                 ->orWhere('kategori', 'like', "%{$keyword}%"))
@@ -18,7 +18,7 @@ class KerusakanController extends Controller
             ->paginate(10)
             ->withQueryString();
 
-        return view('admin.kerusakan.index', compact('kerusakans', 'keyword'));
+        return view('admin.kerusakan.index', compact('kerusakan', 'keyword'));
     }
 
     public function create()

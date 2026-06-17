@@ -34,8 +34,8 @@ class RuleController extends Controller
         return view('admin.rule.form', [
             'rule' => new Rule(),
             'mode' => 'create',
-            'gejalas' => Gejala::orderBy('kode_gejala')->get(),
-            'kerusakans' => Kerusakan::orderBy('kode_kerusakan')->get(),
+            'gejala' => Gejala::orderBy('kode_gejala')->get(),
+            'kerusakan' => Kerusakan::orderBy('kode_kerusakan')->get(),
         ]);
     }
 
@@ -50,8 +50,8 @@ class RuleController extends Controller
         return view('admin.rule.form', [
             'rule' => $rule,
             'mode' => 'edit',
-            'gejalas' => Gejala::orderBy('kode_gejala')->get(),
-            'kerusakans' => Kerusakan::orderBy('kode_kerusakan')->get(),
+            'gejala' => Gejala::orderBy('kode_gejala')->get(),
+            'kerusakan' => Kerusakan::orderBy('kode_kerusakan')->get(),
         ]);
     }
 

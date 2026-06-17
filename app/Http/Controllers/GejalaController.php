@@ -10,7 +10,7 @@ class GejalaController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('q');
-        $gejalas = Gejala::query()
+        $gejala = Gejala::query()
             ->when($keyword, fn ($q) => $q->where('kode_gejala', 'like', "%{$keyword}%")
                 ->orWhere('nama_gejala', 'like', "%{$keyword}%")
                 ->orWhere('kategori', 'like', "%{$keyword}%"))
@@ -18,7 +18,7 @@ class GejalaController extends Controller
             ->paginate(10)
             ->withQueryString();
 
-        return view('admin.gejala.index', compact('gejalas', 'keyword'));
+        return view('admin.gejala.index', compact('gejala', 'keyword'));
     }
 
     public function create()

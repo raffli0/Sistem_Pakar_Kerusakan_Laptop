@@ -19,7 +19,7 @@
 
             <!-- Sticky Quick Category Navigation -->
             <div class="category-quick-nav no-print">
-                @foreach($gejalas as $kategori => $items)
+                @foreach($gejala as $kategori => $items)
                     <a href="#category-{{ Str::slug($kategori) }}" class="category-nav-link">{{ $kategori }}</a>
                 @endforeach
             </div>
@@ -29,7 +29,7 @@
                 <button type="submit" class="btn btn-primary">Proses Diagnosa</button>
             </div>
 
-            @foreach($gejalas as $kategori => $items)
+            @foreach($gejala as $kategori => $items)
                 <div class="symptom-category" id="category-{{ Str::slug($kategori) }}">
                     <h3 class="category-title"><span class="badge badge-blue" style="font-size: 14px; padding: 6px 14px;">{{ $kategori }}</span></h3>
                     <div class="symptom-grid">
